@@ -1,0 +1,26 @@
+<%= render partial: 'layouts/navbar', locals: {nav: 'List'} %>
+<%= render partial: 'layouts/alerts' %>
+
+<div class="d-flex justify-content-center">
+  <div style="width: 90%; max-width: 40rem; margin-top: 6rem"">
+    <h5 class="card-title">Check List</h5>
+    <% if @checks.empty? %>
+      <p>Oh oh. No checks.</p>
+    <% else %>
+      <div class="list-group">
+        <% @checks.each do |check| %>
+          <%= link_to check, class:"list-group-item list-group-item-action d-flex justify-content-between align-items-center" do %>
+
+            <div>
+              <span><%= check.date.strftime('%Y-%m-%d') %></span>
+              <span>&nbsp;&nbsp;<strong><%= check.name %></strong></span>
+            </div>
+
+
+            <div><%= check.decimal_amount %></div>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

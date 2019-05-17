@@ -1,0 +1,13 @@
+<%= render partial: 'layouts/navbar', locals: {nav: "Home"} %>
+<%= render partial: 'layouts/alerts' %>
+
+<div class="d-flex justify-content-center">
+  <div style="width: 90%; max-width: 50rem; margin-top: 6rem; padding: 1rem; background-color: #ccc">
+    <div style="width: 100%; padding-top: 40%; border: 2px solid black; background-color: inherit; position: relative">
+      <h4 style="position: absolute; top: 15%; left: 8%; right: 35%; border-bottom: 1px solid black"><%= @check.name %></h4>
+      <p style="position: absolute; top: 15%; left: 70%; right: 8%; border-bottom: 1px solid black"><%= @check.date.strftime('%A, %b %d') %></p>
+      <h5 style="position: absolute; top: 45%; left: 10%; right: 20%; border-bottom: 1px solid black"><%= @check.pretty_amount %></h5>
+      <div style="position: absolute; top: 80%; left: 50%; right: 8%; border-bottom: 1px solid black"></div>
+    </div>
+  </div>
+</div>

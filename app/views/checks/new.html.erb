@@ -1,0 +1,36 @@
+<%= render partial: 'layouts/navbar', locals: {nav: 'Home'} %>
+<%= render partial: 'layouts/alerts' %>
+
+<div class="d-flex justify-content-center">
+  <div class="card" style="width: 90%; max-width: 40rem; margin-top: 6rem"">
+    <div class="card-body">
+      <h4 class="card-title">Create New Check</h4>
+      <%= form_for @check, url: checks_path, class: 'needs-validation' do |f| %>
+        <div class="form-group">
+          <%= f.label :name %><br />
+          <%= f.text_field :name, class: 'form-control', placeholder: 'John Doe', required: true %>
+          <div class="invalid-tooltip">
+            Name required
+          </div>
+        </div>
+        <div class="form-group">
+          <%= f.label :amount %><br />
+          <%= f.number_field :amount, class: 'form-control currency', required: true, step: ".01", placeholder: '0.00' %>
+          <div class="invalid-tooltip">
+            Amount must be greater than 0
+          </div>
+        </div>
+        <div class="form-group">
+            <%= f.label :date %><br />
+            <%= f.text_field :date, class: 'form-control', data: {provide: 'datepicker', 'auto-close': true, startDate:'05-16-2019'}, placeholder: 'MM-DD-YYYY', required: true %>
+            <div class="invalid-tooltip">
+              Date required
+            </div>
+        </div>
+        <div class="d-flex flex-row align-items-center mt-2">
+          <%= f.submit "Submit", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

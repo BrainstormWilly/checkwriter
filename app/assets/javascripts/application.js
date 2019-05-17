@@ -14,6 +14,18 @@
 //= require rails-ujs
 //= require popper
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+(function($, undefined) {
+  $.fn.datepicker.defaults.autoclose = true;
+  $.fn.datepicker.defaults.startDate = new Date();
+
+  // $(function() {
+  //   // console.log('working')
+  //   $.fn.datepicker.defaults.autoclose = true
+  //
+  // });
+})(jQuery);
