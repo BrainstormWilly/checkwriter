@@ -30,7 +30,7 @@ class ChecksController < ApplicationController
   def create
     @check = Check.new({
       name: check_params[:name],
-      amount: check_params[:amount],
+      amount: check_params[:amount].to_f,
       date: Chronic.parse(check_params[:date]).to_date
     })
 
