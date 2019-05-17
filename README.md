@@ -1,24 +1,34 @@
-# README
+# Check Writer
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Check writing code challenge that allows users to write, view, and list checks.
 
-Things you may want to cover:
+Software:
 
-* Ruby version
+* Ruby 2.4.5 running on Rails 5.2.0
 
-* System dependencies
+* Database is SQLite3 in development, Postgres in production
 
-* Configuration
+* Jquery and Bootstrap 4 frameworks
 
-* Database creation
+* Uses the following Gems:
 
-* Database initialization
+  * numbers_and_words: https://github.com/kslazarev/numbers_and_words
 
-* How to run the test suite
+  * boostrap-datepicker-rails: https://github.com/Nerian/bootstrap-datepicker-rails
 
-* Services (job queues, cache servers, search engines, etc.)
+  * chronic: https://github.com/mojombo/chronic
 
-* Deployment instructions
+* Deployed on Heroku https://check-writer.herokuapp.com
 
-* ...
+
+TODOS:
+
+* Add check numbers
+
+* Add unit tests
+
+* Add user authentication
+
+* Improve validation
+
+* Redesign check view for mobile use
