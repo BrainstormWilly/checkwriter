@@ -5,7 +5,7 @@ class ChecksController < ApplicationController
   # GET /checks.json
   def index
     if params[:query].present?
-      @checks = Check.where("name LIKE '%#{params[:query]}%'")
+      @checks = Check.where("lower(#{Check.table_name}.name) LIKE lower(?)", "%#{params[:query]}%")
     else
       @checks = Check.all
     end
